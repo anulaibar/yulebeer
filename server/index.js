@@ -13,7 +13,7 @@ const app = express()
 
 app.use(bodyParser.json())
 
-app.get('/beers', (req, res) => {
+app.get('/api/beers', (req, res) => {
   Beer.all()
   .then(result => {
     res.send(result.rows)
@@ -23,7 +23,7 @@ app.get('/beers', (req, res) => {
   })
 })
 
-app.get('/voters', (req, res) => {
+app.get('/api/voters', (req, res) => {
   Voter.all()
   .then(result => {
     res.send(result.rows)
@@ -33,7 +33,7 @@ app.get('/voters', (req, res) => {
   })
 })
 
-app.post('/voters', (req, res) => {
+app.post('/api/voters', (req, res) => {
   const {name} = req.body
   const voter = new Voter(name)
   voter.save()
@@ -45,7 +45,7 @@ app.post('/voters', (req, res) => {
   })
 })
 
-app.post('/votes', (req, res) => {
+app.post('/api/votes', (req, res) => {
   const {voter_id, beer_id, rating, motivation} = req.body
   const vote = new Vote(voter_id, beer_id, rating, motivation)
   vote.save()
