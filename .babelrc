@@ -1,9 +1,10 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "node": "current"
-      }
-    }]
-  ]
+  "env": {
+    "production": {
+      "plugins": ["emotion"]
+    },
+    "development": {
+      "plugins": [["emotion", { "sourceMap": true }]]
+    }
+  }
 }

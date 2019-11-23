@@ -1,13 +1,26 @@
-const alert = (state = {message: ''}, action) => {
+import { combineReducers } from "redux";
+
+const alert = (state = { message: "" }, action) => {
   switch (action.type) {
-    case 'SHOW_ALERT':
-      return { message: action.payload.message }
-    case 'HIDE_ALERT':
-      return { message: '' }
-    default: return state
+    case "SHOW_ALERT":
+      return { message: action.payload.message };
+    case "HIDE_ALERT":
+      return { message: "" };
+    default:
+      return state;
   }
-}
+};
 
-const rootReducer = alert
+const beers = (state = [], action) => {
+  switch (action.type) {
+    case "RECEIVE_GET_BEERS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
-export default rootReducer
+export default combineReducers({
+  alert,
+  beers
+});
