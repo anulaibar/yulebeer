@@ -3,9 +3,11 @@ import { Global, css, jsx } from "@emotion/core";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getBeers } from "./actions";
+import GlobalStyles from "./GlobalStyles";
+import BeerCard from "./BeerCard";
 import Rater from "./Rater";
 
-class YuleBeer extends Component {
+class App extends Component {
   componentDidMount() {
     this.props.onMount();
   }
@@ -13,33 +15,7 @@ class YuleBeer extends Component {
   render() {
     return (
       <div>
-        <Global
-          styles={css`
-            html,
-            body {
-              padding: 0;
-              margin: 0;
-              background: white;
-              min-height: 100%;
-              font-family: "Open Sans", sans-serif;
-              background-color: gold;
-              box-sizing: border-box;
-            }
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-              font-family: "Lora", serif;
-            }
-            *,
-            *:before,
-            *:after {
-              box-sizing: inherit;
-            }
-          `}
-        />
+        <GlobalStyles />
         <div
           css={css`
             padding-top: 16px;
@@ -52,9 +28,6 @@ class YuleBeer extends Component {
             <div
               key={beer.id}
               css={css`
-                background-color: white;
-                border-radius: 4px;
-                padding: 16px;
                 width: 90%;
                 margin-bottom: 32px;
                 @media (min-width: 500px) {
@@ -62,17 +35,16 @@ class YuleBeer extends Component {
                 }
               `}
             >
+              <BeerCard beer={beer} />
               <div
                 css={css`
-                  display: flex;
-                  justify-content: center;
+                  background-color: white;
+                  border-radius: 4px;
+                  padding: 16px;
                 `}
               >
-                <img src={beer.imageurl} width={200} />
+                <Rater />
               </div>
-              <h1>{beer.name}</h1>
-              <p>{beer.description}</p>
-              <Rater />
             </div>
           ))}
         </div>
@@ -95,4 +67,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(YuleBeer);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

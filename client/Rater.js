@@ -7,7 +7,7 @@ const Beer = ({ lit, onHover, onClick }) => (
     onMouseEnter={onHover}
     onClick={onClick}
     css={css`
-      font-size: 64px;
+      font-size: 54px;
       cursor: pointer;
       filter: ${lit ? "none" : "grayscale(100%)"};
     `}

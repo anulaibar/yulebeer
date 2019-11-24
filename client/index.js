@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
-import YuleBeer from "./YuleBeer";
+import App from "./App";
 
 const store = createStore(
   rootReducer,
@@ -13,7 +13,7 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <YuleBeer />
+    <App />
   </Provider>,
   document.getElementById("root")
 );
