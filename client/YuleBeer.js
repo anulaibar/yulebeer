@@ -3,6 +3,7 @@ import { Global, css, jsx } from "@emotion/core";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getBeers } from "./actions";
+import Rater from "./Rater";
 
 class YuleBeer extends Component {
   componentDidMount() {
@@ -71,6 +72,7 @@ class YuleBeer extends Component {
               </div>
               <h1>{beer.name}</h1>
               <p>{beer.description}</p>
+              <Rater />
             </div>
           ))}
         </div>
