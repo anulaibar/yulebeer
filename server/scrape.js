@@ -1,6 +1,6 @@
-import rp from "request-promise";
-import cheerio from "cheerio";
-import Beer from "./models/beer";
+const rp = require("request-promise");
+const cheerio = require("cheerio");
+const Beer = require("./models/beer");
 
 const scrapeBeer = async url => {
   rp(url)

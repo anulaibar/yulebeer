@@ -1,4 +1,4 @@
-import query from "../db";
+const query = require("../db");
 
 class Beer {
   constructor(name, url, imageUrl, description) {
@@ -24,4 +24,4 @@ class Beer {
   }
 }
 
-export default Beer;
+module.exports = Beer;
