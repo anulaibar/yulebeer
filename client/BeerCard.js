@@ -14,6 +14,9 @@ const Face = ({ children, flipped }) => (
       backface-visibility: hidden;
       position: absolute;
       border-radius: 4px;
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       top: 0;
       left: 0;
       z-index: 2;
@@ -34,6 +37,7 @@ const BeerCard = ({ beer }) => {
         perspective: 1000px;
         height: 432px;
         margin-bottom: 16px;
+        cursor: pointer;
       `}
       onClick={e => {
         setFlipped(!flipped);

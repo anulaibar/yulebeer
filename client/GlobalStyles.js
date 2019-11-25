@@ -11,7 +11,7 @@ const GlobalStyles = () => (
         background: white;
         min-height: 100%;
         font-family: "Open Sans", sans-serif;
-        background-color: gold;
+        background-color: #ffc107;
         box-sizing: border-box;
       }
       h1,
