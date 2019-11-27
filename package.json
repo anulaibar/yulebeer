@@ -36,5 +36,8 @@
     "pg": "^7.14.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
