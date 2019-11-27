@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const Beer = require("./models/beer");
 const Voter = require("./models/voter");
 const Vote = require("./models/vote");
@@ -57,6 +58,12 @@ app.post("/api/votes", (req, res) => {
     .catch(error => {
       console.log("POST /votes error", error, req.body);
     });
+});
+
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.get("*", function(request, response) {
+  response.sendFile(path.resolve(__dirname, "index.html"));
 });
 
 app.listen(3000, () => console.log("Yule Beer listening on port 3000!"));

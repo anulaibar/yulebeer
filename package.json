@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "node run-devServer.js",
     "build": "parcel build index.html",
-    "start": "npm run build && node server/index.js",
-    "scrape": "npm run build && node dist/scrape.js"
+    "start": "node server.js",
+    "scrape": "node scrape.js"
   },
   "keywords": [],
   "author": "",
