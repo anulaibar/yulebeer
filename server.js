@@ -5,11 +5,6 @@ const Beer = require("./models/beer");
 const Voter = require("./models/voter");
 const Vote = require("./models/vote");
 
-const getBeers = async () => {
-  const beers = await Beer.all();
-  console.log(beers);
-};
-
 const app = express();
 
 app.use(bodyParser.json());
