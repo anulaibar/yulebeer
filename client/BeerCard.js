@@ -38,6 +38,7 @@ const BeerCard = ({ beer }) => {
         height: 432px;
         margin-bottom: 16px;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
       `}
       onClick={e => {
         setFlipped(!flipped);

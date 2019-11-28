@@ -10,6 +10,7 @@ const Beer = ({ lit, onHover, onClick }) => (
       font-size: 54px;
       cursor: pointer;
       filter: ${lit ? "none" : "grayscale(100%)"};
+      -webkit-tap-highlight-color: transparent;
     `}
   >
     🍺
