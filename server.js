@@ -9,6 +9,18 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+  if (
+    process.env.NODE_ENV === "production" &&
+    req.headers["x-forwarded-proto"] !== "https"
+  ) {
+    var secureUrl = "https://" + req.headers["host"] + req.url;
+    res.writeHead(301, { Location: secureUrl });
+    res.end();
+  }
+  next();
+});
+
 app.get("/api/beers", (req, res) => {
   Beer.all()
     .then(result => {
