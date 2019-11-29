@@ -7,7 +7,7 @@ const Beer = ({ lit, onHover, onClick }) => (
     onMouseEnter={onHover}
     onClick={onClick}
     css={css`
-      font-size: 54px;
+      font-size: 50px;
       cursor: pointer;
       filter: ${lit ? "none" : "grayscale(100%)"};
       -webkit-tap-highlight-color: transparent;
@@ -36,7 +36,16 @@ const Rater = () => {
       }}
     />
   ));
-  return <div onMouseLeave={() => setHoverId(0)}>{beers}</div>;
+  return (
+    <div
+      onMouseLeave={() => setHoverId(0)}
+      css={css`
+        text-align: center;
+      `}
+    >
+      {beers}
+    </div>
+  );
 };
 
 export default Rater;
