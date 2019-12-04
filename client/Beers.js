@@ -47,7 +47,7 @@ const Beers = ({ beer }) => (
           {beer && beer.id && beer.id > 1 && (
             <Link
               css={css`
-                padding: 16px 16px 16px 0;
+                padding-right: 64px;
                 font-size: 64px;
                 text-decoration: none;
                 color: black;
@@ -62,7 +62,7 @@ const Beers = ({ beer }) => (
           {beer && beer.id && beer.id < 12 && (
             <Link
               css={css`
-                padding: 16px 0 16px 16px;
+                padding-left: 64px;
                 font-size: 64px;
                 text-decoration: none;
                 color: black;
