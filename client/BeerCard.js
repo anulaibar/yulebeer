@@ -22,7 +22,8 @@ const Face = ({ children, flipped }) => (
       z-index: 2;
       transform: ${flipped ? "rotateY(180deg)" : "rotateY(0deg)"};
       background-color: white;
-      padding: 16px;
+      padding: 32px;
+      text-align: center;
     `}
   >
     {children}

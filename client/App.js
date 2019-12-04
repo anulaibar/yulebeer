@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { Global, css, jsx } from "@emotion/core";
-import React, { Component } from "react";
+import { css, jsx } from "@emotion/core";
+import { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getBeers } from "./actions";
 import GlobalStyles from "./GlobalStyles";
 import BeerCard from "./BeerCard";
 import Rater from "./Rater";
 
 class App extends Component {
   componentDidMount() {
-    this.props.onMount();
+    // this.props.onMount();
   }
 
   render() {
@@ -56,6 +56,10 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  beers: PropTypes.array
+};
+
 const mapStateToProps = state => {
   return {
     beers: state.beers,
@@ -64,10 +68,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onMount: () => getBeers(dispatch)
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

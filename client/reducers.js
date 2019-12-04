@@ -13,7 +13,7 @@ const alert = (state = { message: "" }, action) => {
 
 const beers = (state = [], action) => {
   switch (action.type) {
-    case "RECEIVE_GET_BEERS":
+    case "RECEIVE_BEERS":
       return action.payload;
     default:
       return state;
