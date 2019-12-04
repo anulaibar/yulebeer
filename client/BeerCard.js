@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { Global, css, jsx } from "@emotion/core";
+import { css, jsx } from "@emotion/core";
 import React from "react";
+import PropTypes from "prop-types";
 
 const Face = ({ children, flipped }) => (
   <div
@@ -30,8 +31,14 @@ const Face = ({ children, flipped }) => (
   </div>
 );
 
+Face.propTypes = {
+  children: PropTypes.node,
+  flipped: PropTypes.bool
+};
+
 const BeerCard = ({ beer }) => {
   const [flipped, setFlipped] = React.useState(false);
+  const { imageurl, name, description } = beer || {};
   return (
     <div
       css={css`
@@ -41,7 +48,7 @@ const BeerCard = ({ beer }) => {
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
       `}
-      onClick={e => {
+      onClick={() => {
         setFlipped(!flipped);
       }}
     >
@@ -54,16 +61,24 @@ const BeerCard = ({ beer }) => {
       >
         <Face>
           <div css={css``}>
-            <img src={beer.imageurl} width={200} />
+            <img src={imageurl} width={200} />
           </div>
         </Face>
         <Face flipped>
-          <h1>{beer.name}</h1>
-          <p>{beer.description}</p>
+          <h1>{name}</h1>
+          <p>{description}</p>
         </Face>
       </div>
     </div>
   );
+};
+
+BeerCard.propTypes = {
+  beer: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    imageurl: PropTypes.string
+  })
 };
 
 export default BeerCard;

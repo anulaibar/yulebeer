@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import React from "react";
 import { css, jsx } from "@emotion/core";
+import React from "react";
+import PropTypes from "prop-types";
 
 const Beer = ({ lit, onHover, onClick }) => (
   <span
@@ -17,6 +18,12 @@ const Beer = ({ lit, onHover, onClick }) => (
   </span>
 );
 
+Beer.propTypes = {
+  lit: PropTypes.bool,
+  onHover: PropTypes.func,
+  onClick: PropTypes.func
+};
+
 const Rater = () => {
   const [hoverId, setHoverId] = React.useState(0);
   const [rating, setRating] = React.useState(0);
@@ -25,8 +32,8 @@ const Rater = () => {
     <Beer
       key={id}
       lit={hoverId >= id || rating >= id}
-      onHover={e => setHoverId(id)}
-      onClick={e => {
+      onHover={() => setHoverId(id)}
+      onClick={() => {
         if (id === rating) {
           setRating(0);
           setHoverId(0);

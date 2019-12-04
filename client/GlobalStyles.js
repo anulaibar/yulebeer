@@ -9,7 +9,7 @@ const GlobalStyles = () => (
         padding: 0;
         margin: 0;
         background: white;
-        min-height: 100%;
+        height: 100%;
         font-family: "Open Sans", sans-serif;
         background-color: #ffc107;
         box-sizing: border-box;
