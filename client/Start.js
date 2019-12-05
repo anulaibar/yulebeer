@@ -2,7 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import { Link } from "@reach/router";
 
-const NotFound = () => (
+const Start = () => (
   <div
     css={css`
       width: 100%;
@@ -17,19 +17,19 @@ const NotFound = () => (
         text-align: center;
       `}
     >
-      <h1>404</h1>
+      <h1>Start</h1>
       <Link
         css={css`
           text-decoration: none;
           color: black;
           font-size: 32px;
         `}
-        to="/"
+        to="/beer/1"
       >
-        ←
+        →
       </Link>
     </div>
   </div>
 );
 
-export default NotFound;
+export default Start;
