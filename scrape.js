@@ -27,12 +27,16 @@ const scrapeBeer = async url => {
 };
 
 const urls = [
-  "https://www.systembolaget.se/dryck/ol/jamtlands-julol-1138203",
-  "https://www.systembolaget.se/dryck/ol/lagunitas-holiday-ale-1131203",
   "https://www.systembolaget.se/dryck/ol/nice-chouffe-1136401",
-  "https://www.systembolaget.se/dryck/ol/hibernation-ale-1133203",
+  "https://www.systembolaget.se/dryck/ol/gouden-carolus-1129903",
   "https://www.systembolaget.se/dryck/ol/wonderful-winter-ale-1147515",
-  "https://www.systembolaget.se/dryck/ol/gouden-carolus-1129903"
+  "https://www.systembolaget.se/dryck/ol/hibernation-ale-1133203",
+  "https://www.systembolaget.se/dryck/ol/charlis-snofall-1126903",
+  "https://www.systembolaget.se/dryck/ol/st-eriks-1136203",
+  "https://www.systembolaget.se/dryck/ol/daulne-1129303",
+  "https://www.systembolaget.se/dryck/ol/train-station-brewery-1132203",
+  "https://www.systembolaget.se/dryck/ol/goteborgs-christmas-1072103",
+  "https://www.systembolaget.se/dryck/ol/ballast-point-1117903"
 ];
 
 for (let url of urls) {
