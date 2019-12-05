@@ -14,7 +14,7 @@ const App = () => (
         height: 100%;
       `}
     >
-      <Beers path="/beer/:beerId" />
+      <Beers path="/beer/:beerIndex" />
       <NotFound default />
     </Router>
   </Fragment>
