@@ -41,6 +41,6 @@
     "request-promise": "^4.2.5"
   },
   "engines": {
-    "node": "12.x"
+    "node": "12.13.0"
   }
 }
