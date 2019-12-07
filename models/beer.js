@@ -9,7 +9,7 @@ class Beer {
   }
 
   static all() {
-    return query("SELECT * FROM beers");
+    return query("SELECT * FROM beers ORDER BY id");
   }
 
   save() {

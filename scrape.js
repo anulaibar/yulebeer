@@ -36,8 +36,15 @@ const urls = [
   "https://www.systembolaget.se/dryck/ol/daulne-1129303",
   "https://www.systembolaget.se/dryck/ol/train-station-brewery-1132203",
   "https://www.systembolaget.se/dryck/ol/goteborgs-christmas-1072103",
-  "https://www.systembolaget.se/dryck/ol/ballast-point-1117903"
+  "https://www.systembolaget.se/dryck/ol/ballast-point-1117903",
+  "https://www.systembolaget.se/dryck/ol/lussebulle-imperial-stout-3406903",
+  "https://www.systembolaget.se/dryck/ol/lagunitas-1111803",
+  "https://www.systembolaget.se/dryck/ol/osterlen-1141301",
+  "https://www.systembolaget.se/dryck/ol/mysingen-midvinterbrygd-1773201",
+  "https://www.systembolaget.se/dryck/ol/jamtlands-julol-1138203"
 ];
+// "https://www.dubuisson.com/en/our-beers/bush/bush-de-noel-premium-description/",
+// "https://www.vinmonopolet.no/vmp/Land/Belgia/Delirium-Christmas/p/4371601",
 
 for (let url of urls) {
   scrapeBeer(url);
