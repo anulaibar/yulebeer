@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { Router } from "@reach/router";
 import GlobalStyles from "./GlobalStyles";
 import Start from "./Start";
-import Beers from "./Beers";
+import Beer from "./Beer";
 import NotFound from "./NotFound";
 
 const App = () => (
@@ -15,7 +15,7 @@ const App = () => (
         height: 100%;
       `}
     >
-      <Beers path="/beer/:beerIndex" />
+      <Beer path="/beers/:beerId" />
       <Start path="/" />
       <NotFound default />
     </Router>

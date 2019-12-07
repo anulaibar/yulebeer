@@ -20,7 +20,22 @@ const beers = (state = [], action) => {
   }
 };
 
+const cards = (state = [], action) => {
+  switch (action.type) {
+    case "FLIP_CARD":
+      return state.map((flag, index) => {
+        if (index !== action.payload) {
+          return flag;
+        }
+        return !flag;
+      });
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   alert,
-  beers
+  beers,
+  cards
 });
