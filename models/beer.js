@@ -9,12 +9,12 @@ class Beer {
   }
 
   static all() {
-    return query("SELECT * FROM beers ORDER BY id");
+    return query("SELECT * FROM beer ORDER BY id");
   }
 
   save() {
     var queryText =
-      "INSERT INTO beers (name, url, imageUrl,description) VALUES ($1, $2, $3,$4) RETURNING *";
+      "INSERT INTO beer (name, url, imageUrl,description) VALUES ($1, $2, $3,$4) RETURNING *";
     return query(queryText, [
       this.name,
       this.url,

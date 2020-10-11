@@ -9,12 +9,12 @@ class Vote {
   }
 
   static all() {
-    return query("SELECT * FROM votes");
+    return query("SELECT * FROM vote");
   }
 
   save() {
     var queryText =
-      "INSERT INTO votes(voter_id, beer_id, rating, motivation) VALUES($1, $2, $3, $4) RETURNING *";
+      "INSERT INTO vote(voter_id, beer_id, rating, motivation) VALUES($1, $2, $3, $4) RETURNING *";
     return query(queryText, [
       this.voter_id,
       this.beer_id,

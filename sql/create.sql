@@ -1,4 +1,4 @@
-CREATE TABLE beers (
+CREATE TABLE beer (
     id SERIAL PRIMARY KEY,
     name character varying(256),
     url character varying(2048),
@@ -7,13 +7,13 @@ CREATE TABLE beers (
 );
 
 
-CREATE TABLE voters (
+CREATE TABLE voter (
     id SERIAL PRIMARY KEY,
     name character varying(128)
 );
 
 
-CREATE TABLE votes (
+CREATE TABLE vote (
     id SERIAL PRIMARY KEY,
     beer_id integer,
     voter_id integer,

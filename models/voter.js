@@ -6,11 +6,11 @@ class Voter {
   }
 
   static all() {
-    return query("SELECT * FROM voters");
+    return query("SELECT * FROM voter");
   }
 
   save() {
-    var queryText = "INSERT INTO voters(name) VALUES($1) RETURNING *";
+    var queryText = "INSERT INTO voter(name) VALUES($1) RETURNING *";
     return query(queryText, [this.name]);
   }
 }
