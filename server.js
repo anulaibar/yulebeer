@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const query = require("./db");
 const Beer = require("./models/beer");
 const Voter = require("./models/voter");
 const Vote = require("./models/vote");
@@ -19,6 +20,17 @@ app.use(function(req, res, next) {
     res.end();
   }
   next();
+});
+
+app.get("/api/status", (req, res) => {
+  return query("SELECT 1")
+    .then(() => {
+      res.send("db connection ok");
+    })
+    .catch(error => {
+      res.send("db connection fail");
+      console.log("db connection fail", error, req);
+    });
 });
 
 app.get("/api/beers", (req, res) => {

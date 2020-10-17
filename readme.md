@@ -6,7 +6,7 @@ A web app for beer ratings
 
 Create db and install deps:
 ```
-createdb yule_beer
+createdb yb
 npm i
 ```
 
@@ -43,5 +43,5 @@ NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) node scrape.j
 
 Connect to local db:
 ```
-psql yule_beer
+psql yb
 ```

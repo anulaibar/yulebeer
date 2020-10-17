@@ -4,9 +4,13 @@ const isProduction = process.env.NODE_ENV === "production";
 
 const connectionString = process.env.DATABASE_URL
   ? process.env.DATABASE_URL
-  : "postgresql://localhost:5432/yule_beer";
+  : "postgresql://localhost:5432/yb";
 
-const pool = new Pool({ connectionString, ssl: isProduction });
+const pool = new Pool({
+  connectionString,
+  ssl: isProduction,
+  connectionTimeoutMillis: 3000
+});
 
 const query = async (q, p = []) => {
   const client = await pool.connect();
