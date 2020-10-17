@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 
 const NotFound = () => (
   <div

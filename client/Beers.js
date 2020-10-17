@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { connect } from "react-redux";
-import { Link } from "@reach/router";
+import { Link, useRouteMatch } from "react-router-dom";
 import PropTypes from "prop-types";
 import BeerCard from "./BeerCard";
 import Rater from "./Rater";
 
-const Beers = ({ beers, beerIndex }) => {
+const Beers = ({ beers }) => {
+  const match = useRouteMatch("/beer/:beerIndex");
+  const beerIndex = Number(match.params.beerIndex);
   const beer = beers[beerIndex - 1];
   const first = beerIndex === 1;
   const last = beerIndex === beers.length;
@@ -90,11 +92,9 @@ Beers.propTypes = {
   beerIndex: PropTypes.number
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const beerIndex = Number(ownProps.beerIndex);
+const mapStateToProps = state => {
   const { beers } = state;
   return {
-    beerIndex,
     beers
   };
 };

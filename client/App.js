@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import { Fragment } from "react";
-import { Router } from "@reach/router";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
 import Start from "./Start";
 import Beers from "./Beers";
@@ -10,14 +10,18 @@ import NotFound from "./NotFound";
 const App = () => (
   <Fragment>
     <GlobalStyles />
-    <Router
-      css={css`
-        height: 100%;
-      `}
-    >
-      <Beers path="/beer/:beerIndex" />
-      <Start path="/" />
-      <NotFound default />
+    <Router>
+      <Switch>
+        <Route exact path="/beer/:beerIndex">
+          <Beers />
+        </Route>
+        <Route exact path="/">
+          <Start />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
     </Router>
   </Fragment>
 );
