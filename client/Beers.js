@@ -55,9 +55,6 @@ const Beers = ({ beers }) => {
                 css={css`
                   padding-right: 64px;
                   font-size: 64px;
-                  text-decoration: none;
-                  color: black;
-                  -webkit-tap-highlight-color: transparent;
                 `}
                 to={`/beer/${beerIndex - 1}`}
               >
@@ -71,9 +68,6 @@ const Beers = ({ beers }) => {
                 css={css`
                   padding-left: 64px;
                   font-size: 64px;
-                  text-decoration: none;
-                  color: black;
-                  -webkit-tap-highlight-color: transparent;
                 `}
                 to={`/beer/${beerIndex + 1}`}
               >

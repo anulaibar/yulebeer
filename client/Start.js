@@ -21,7 +21,6 @@ const Start = () => (
       <Link
         css={css`
           text-decoration: none;
-          color: black;
           font-size: 32px;
         `}
         to="/beer/1"

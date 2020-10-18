@@ -1,29 +1,52 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { Fragment } from "react";
+import { ThemeProvider } from "emotion-theming";
+import { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
 import Start from "./Start";
+import About from "./About";
 import Beers from "./Beers";
 import NotFound from "./NotFound";
+import Footer from "./Footer";
+import ScrollToTop from "./ScrollToTop";
+import { light, dark } from "./Themes";
 
-const App = () => (
-  <Fragment>
-    <GlobalStyles />
-    <Router>
-      <Switch>
-        <Route exact path="/beer/:beerIndex">
-          <Beers />
-        </Route>
-        <Route exact path="/">
-          <Start />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-    </Router>
-  </Fragment>
-);
+const App = () => {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
+  return (
+    <ThemeProvider theme={theme === "light" ? light : dark}>
+      <Fragment>
+        <GlobalStyles />
+        <Router>
+          <ScrollToTop />
+          <div style={{ height: "100vh" }}>
+            <Switch>
+              <Route exact path="/beer/:beerIndex">
+                <Beers />
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/">
+                <Start />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </div>
+          <Footer>
+            <button onClick={toggleTheme}>Switch Theme</button>
+          </Footer>
+        </Router>
+      </Fragment>
+    </ThemeProvider>
+  );
+};
 
 export default App;

@@ -2,7 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import { Link } from "react-router-dom";
 
-const NotFound = () => (
+const About = () => (
   <div
     css={css`
       width: 100%;
@@ -17,7 +17,22 @@ const NotFound = () => (
         text-align: center;
       `}
     >
-      <h1>404</h1>
+      <h1>About</h1>
+      <div>
+        <small>
+          <i>Icons made by </i>
+          <a
+            href="https://www.flaticon.com/free-icon/beer_761767"
+            title="Good Ware"
+          >
+            Good Ware
+          </a>
+          <i> from </i>
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </small>
+      </div>
       <Link
         css={css`
           text-decoration: none;
@@ -31,4 +46,4 @@ const NotFound = () => (
   </div>
 );
 
-export default NotFound;
+export default About;
