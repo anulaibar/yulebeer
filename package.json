@@ -8,10 +8,10 @@
   },
   "main": "server.js",
   "scripts": {
-    "dev": "node run-devServer.js",
+    "dev": "node -r dotenv/config run-devServer.js",
     "build": "parcel build index.html",
-    "start": "node server.js",
-    "scrape": "node scrape.js"
+    "start": "node -r dotenv/config server.js",
+    "scrape": "node -r dotenv/config scrape.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "@emotion/core": "^10.0.35",
     "@svgr/parcel-plugin-svgr": "^5.4.0",
     "dot-prop": "^6.0.0",
+    "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.21.4",

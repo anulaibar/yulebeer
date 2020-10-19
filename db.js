@@ -1,15 +1,13 @@
 const { Pool } = require("pg");
 
-const isProduction = process.env.NODE_ENV === "production";
-
-const connectionString = process.env.DATABASE_URL
-  ? process.env.DATABASE_URL
-  : "postgresql://localhost:5432/yb";
+const connectionString = process.env.DATABASE_URL;
+const ssl = process.env.NODE_ENV === "production";
+const connectionTimeoutMillis = 3000;
 
 const pool = new Pool({
   connectionString,
-  ssl: isProduction,
-  connectionTimeoutMillis: 3000
+  ssl,
+  connectionTimeoutMillis
 });
 
 const query = async (q, p = []) => {

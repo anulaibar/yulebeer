@@ -4,10 +4,23 @@ A web app for beer ratings
 
 ### Install
 
-Create db and install deps:
+Create db and tables:
+
 ```
 createdb yb
+psql yb -f sql/create.sql
+```
+
+Install deps:
+
+```
 npm i
+```
+
+Configure:
+
+```
+cp .env.sample .env
 ```
 
 ### Quickstart
@@ -37,11 +50,4 @@ npm run scrape
 Populate production db:
 ```
 NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) node scrape.js
-```
-
-### Db
-
-Connect to local db:
-```
-psql yb
 ```
