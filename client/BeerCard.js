@@ -60,9 +60,13 @@ const BeerCard = ({ beer }) => {
         `}
       >
         <Face>
-          <div css={css``}>
-            <img src={imageurl} width={200} />
-          </div>
+          <img
+            css={css`
+              max-width: 200px;
+              max-height: 400px;
+            `}
+            src={imageurl}
+          />
         </Face>
         <Face flipped>
           <h1>{name}</h1>
