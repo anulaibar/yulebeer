@@ -8,10 +8,10 @@
   },
   "main": "server.js",
   "scripts": {
-    "dev": "node -r dotenv/config run-devServer.js",
+    "dev": "node run-devServer.js",
     "build": "parcel build index.html",
-    "start": "node -r dotenv/config server.js",
-    "scrape": "node -r dotenv/config scrape.js"
+    "start": "node server.js",
+    "scrape": "node scrape.js"
   },
   "keywords": [],
   "author": "",
