@@ -1,10 +1,10 @@
 {
-  "name": "yule-beer",
+  "name": "yulebeer",
   "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anulaibar/yule-beer"
+    "url": "https://github.com/anulaibar/yulebeer"
   },
   "main": "server.js",
   "scripts": {
