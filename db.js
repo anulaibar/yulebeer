@@ -1,12 +1,10 @@
 const { Pool } = require("pg");
 
 const connectionString = process.env.DATABASE_URL;
-const ssl = process.env.NODE_ENV === "production";
 const connectionTimeoutMillis = 3000;
 
 const pool = new Pool({
   connectionString,
-  ssl,
   connectionTimeoutMillis
 });
 
