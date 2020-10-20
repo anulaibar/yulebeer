@@ -14,7 +14,8 @@ const GlobalStyles = () => {
           height: 100%;
           font-family: "Open Sans", sans-serif;
           box-sizing: border-box;
-          background-color: ${theme.body.backgroundColor};
+          background: ${theme.body.background};
+          background: ${theme.body.backgroundRadient};
           color: ${theme.body.color};
         }
         h1,
