@@ -8,6 +8,7 @@ import Start from "./Start";
 import About from "./About";
 import Beers from "./Beers";
 import NotFound from "./NotFound";
+import Main from "./Main";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import { light, dark } from "./Themes";
@@ -24,7 +25,7 @@ const App = () => {
         <GlobalStyles />
         <Router>
           <ScrollToTop />
-          <div style={{ height: "100vh" }}>
+          <Main>
             <Switch>
               <Route exact path="/beer/:beerIndex">
                 <Beers />
@@ -39,7 +40,7 @@ const App = () => {
                 <NotFound />
               </Route>
             </Switch>
-          </div>
+          </Main>
           <Footer>
             <button onClick={toggleTheme}>Switch Theme</button>
           </Footer>

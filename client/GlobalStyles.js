@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { Global, css, jsx } from "@emotion/core";
-import { useTheme } from "emotion-theming";
 
 const GlobalStyles = () => {
-  const theme = useTheme();
   return (
     <Global
       styles={css`
@@ -11,12 +9,8 @@ const GlobalStyles = () => {
         body {
           padding: 0;
           margin: 0;
-          height: 100%;
           font-family: "Open Sans", sans-serif;
           box-sizing: border-box;
-          background: ${theme.body.background};
-          background: ${theme.body.backgroundRadient};
-          color: ${theme.body.color};
         }
         h1,
         h2,

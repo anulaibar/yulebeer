@@ -6,7 +6,7 @@ export const light = {
     color: "sienna"
   },
   footer: {
-    backgroundColor: "darkOrange",
+    background: "darkOrange",
     color: "sienna"
   }
 };
@@ -19,7 +19,7 @@ export const dark = {
     color: "saddleBrown"
   },
   footer: {
-    backgroundColor: "saddleBrown",
+    background: "saddleBrown",
     color: "gold"
   }
 };

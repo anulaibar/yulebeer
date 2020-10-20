@@ -2,6 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import { Link } from "react-router-dom";
 import { useTheme } from "emotion-theming";
+import PropTypes from "prop-types";
 
 const Footer = ({ children }) => {
   const theme = useTheme();
@@ -11,7 +12,7 @@ const Footer = ({ children }) => {
         width: 100%;
         height: 200px;
         padding: 32px;
-        background-color: ${theme.footer.backgroundColor};
+        background-color: ${theme.footer.background};
         color: ${theme.footer.color};
         display: flex;
         flex-direction: column;
@@ -42,6 +43,10 @@ const Footer = ({ children }) => {
       {children}
     </div>
   );
+};
+
+Footer.propTypes = {
+  children: PropTypes.node
 };
 
 export default Footer;
