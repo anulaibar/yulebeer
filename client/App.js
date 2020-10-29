@@ -7,6 +7,7 @@ import GlobalStyles from "./GlobalStyles";
 import Start from "./Start";
 import About from "./About";
 import Beers from "./Beers";
+import Tasting from "./Tasting";
 import NotFound from "./NotFound";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -27,6 +28,9 @@ const App = () => {
           <ScrollToTop />
           <Main>
             <Switch>
+              <Route exact path="/tasting">
+                <Tasting />
+              </Route>
               <Route exact path="/beer/:beerIndex">
                 <Beers />
               </Route>

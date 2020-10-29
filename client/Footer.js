@@ -26,6 +26,16 @@ const Footer = ({ children }) => {
           font-size: 32px;
           color: inherit;
         `}
+        to="/tasting"
+      >
+        Tasting
+      </Link>
+      <Link
+        css={css`
+          text-decoration: none;
+          font-size: 32px;
+          color: inherit;
+        `}
         to="/"
       >
         Start
