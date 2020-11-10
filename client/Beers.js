@@ -5,6 +5,7 @@ import { Link, useRouteMatch } from "react-router-dom";
 import PropTypes from "prop-types";
 import BeerCard from "./BeerCard";
 import Rater from "./Rater";
+import Motivation from "./Motivation";
 
 const Beers = ({ beers }) => {
   const match = useRouteMatch("/beer/:beerIndex");
@@ -43,6 +44,7 @@ const Beers = ({ beers }) => {
         >
           <Rater />
         </div>
+        <Motivation />
         <div
           css={css`
             display: flex;

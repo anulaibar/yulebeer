@@ -22,6 +22,7 @@
     "@babel/preset-react": "^7.12.1",
     "@emotion/core": "^10.0.35",
     "@svgr/parcel-plugin-svgr": "^5.4.0",
+    "axios": "^0.21.0",
     "dot-prop": "^6.0.0",
     "emotion-theming": "^10.0.27",
     "eslint": "^6.8.0",
