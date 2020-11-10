@@ -10,7 +10,6 @@ const Footer = ({ children }) => {
     <div
       css={css`
         width: 100%;
-        height: 200px;
         padding: 32px;
         background-color: ${theme.footer.background};
         color: ${theme.footer.color};

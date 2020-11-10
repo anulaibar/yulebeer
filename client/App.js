@@ -13,6 +13,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import { light, dark } from "./Themes";
+import ThemeSwitch from "./ThemeSwitch";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -46,7 +47,7 @@ const App = () => {
             </Switch>
           </Main>
           <Footer>
-            <button onClick={toggleTheme}>Switch Theme</button>
+            <ThemeSwitch onClick={toggleTheme} />
           </Footer>
         </Router>
       </Fragment>
