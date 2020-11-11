@@ -11,7 +11,7 @@ const Motivation = () => {
     if (!done) return;
 
     const saveData = async () => {
-      await axios.post("http://localhost:3000/api/votes", {
+      await axios.post("/api/votes", {
         motivation: state
       });
     };
